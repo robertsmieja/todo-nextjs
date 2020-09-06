@@ -13,7 +13,7 @@ export async function getServerSideProps() {
 
 const Todo = (props) => {
   const initialData = props.data
-  const { data } = useSWR("/todos", getTodos, { initialData })
+  const { data } = useSWR("/todo", getTodos, { initialData })
 
   return (
     <div>
@@ -80,7 +80,7 @@ const Todo = (props) => {
 }
 
 Todo.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 }
 Todo.displayName = "Todo"
 

@@ -1,10 +1,5 @@
 import Link from "next/link"
 
-const links = [{ href: "//github.com/create-next-app/create-next-app", label: "Github" }].map((link) => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
 const Nav = () => (
   <nav>
     <ul>
@@ -13,15 +8,16 @@ const Nav = () => (
           <a>Home</a>
         </Link>
       </li>
-      <ul>
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <li>
+        <Link href="/todo">
+          <a>Todos</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/user">
+          <a>Users</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>{`
@@ -34,7 +30,6 @@ const Nav = () => (
       }
       ul {
         display: flex;
-        justify-content: space-between;
       }
       nav > ul {
         padding: 4px 16px;
@@ -46,7 +41,7 @@ const Nav = () => (
       a {
         color: #067df7;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 16px;
       }
     `}</style>
   </nav>

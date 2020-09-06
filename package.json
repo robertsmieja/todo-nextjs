@@ -2,6 +2,7 @@
   "author": "",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "axios": "^0.20.0",
     "file-loader": "^6.1.0",
     "next": "^9.5.3",
     "prop-types": "latest",
@@ -41,7 +42,13 @@
     "*.{js,ts,jsx,tsx,json,md}": [
       "prettier --write"
     ],
-    "src/*.{js,ts,jsx,tsx}": [
+    "components/*.{js,jsx": [
+      "eslint --fix"
+    ],
+    "lib/*.{js,jsx}": [
+      "eslint --fix"
+    ],
+    "pages/*.{js,jsx}": [
       "eslint --fix"
     ]
   },
@@ -52,8 +59,8 @@
     "build": "next build",
     "clean": "rimraf .next/",
     "dev": "next",
-    "lint": "eslint ./**/*",
-    "lint:fix": "eslint --fix ./pages/**/* ./components/**/*",
+    "lint": "eslint --ext \".jsx,.js\"",
+    "lint:fix": "eslint --ext \".jsx,.js\" --fix",
     "lint:staged": "lint-staged",
     "prettier": "prettier --write '*.{js,ts,jsx,tsx,json,md}'",
     "start": "next start",
